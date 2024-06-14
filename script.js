@@ -97,10 +97,21 @@ class Dial{
         slice.setAttribute("class","animate-draw");
         this.svg.appendChild(slice);
         this.slice = slice;
-
-
-
     
+    }
+
+    CreateOverlay(){
+        const r = this.size - this.size / 2 - this.strokeWidth / 2;
+        const circle = document.createElementNS("http://www.w3.org/2000/svg","circle");
+
+        circle.setAttribute("cx",this.size / 2);
+        circle.setAttribute("cy",this.size / 2);
+        circle.setAttribute("r", r);
+        circle.setAttribute("fill", "url(#gradient-background)");
+        circle.setAttribute("class","animated-draw");
+
+        this.svf.appendChild(circle);
+        this.overlay = circle;
     }
 
 

@@ -161,8 +161,20 @@ class Dial{
             this.svg.appendChild(arrow);
             this.arrow = arrow;
 
+    }
 
-
+    animateStart(){
+        let v = 0;
+        const intervalOne = setInterval(() => {
+            const p = +(v / this.value).toFixed(2);
+            const a = p < 0.95 ? 2 - 2 * p : 0.05;
+            v += a;
+            if(v >= + this.value){
+                v = this.value;
+                clearInterval(intervalOne);
+            }
+            this.setValue(v);
+        }, 10 );
     }
 
 

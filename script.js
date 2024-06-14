@@ -114,6 +114,25 @@ class Dial{
         this.overlay = circle;
     }
 
+    createText(){
+
+        const fontSize = this.size / 3.5;
+
+        let text = document.createElementNS("http://www.w3.org/2000/svg","text");
+
+        text.setAttribute("x", this.size / 2 + fontSize / 7.5);
+        text.setAttribute("y", this.size / 2 + fontSize / 4);
+        text.setAttribute("font-family", "Century Gothic Lato");
+        text.setAttribute("font-size","#fontSize");
+        text.setAttribute("fill","#78f8ec");
+        text.setAttribute("text-anchor","middle");
+
+        const tspanSize = fontSize / 3;
+        text.innerHTML = `${0%}`;
+        this.svg.appendChild(text);
+        this.text = text;
+    }
+
 
 
 }

@@ -36,7 +36,51 @@ class Dial{
     }
 
     createDefs(){
+        var defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+        linearGradient = document.createElementNS(
+                    "http://www.w3.org/2000/svg",
+                    "linearGradient"
+        ),
+        stop1 = document.createElementNS("http://www.w3.org/2000/svg","stop"),
+        stop2 = document.createElementNS("http://www.w3.org/2000/svg","stop"),
+
+        linearGradientBackground = document.createElementNS("http://www.w3.org/2000/svg", "background");
         
+        linearGradient.setAttribute("id","gradient");
+
+        stop1.setAttribute("stop-color","#ffa000");
+        stop1.setAttribute("offset","0%");
+
+        linearGradient.appendChild(stop1);
+
+        stop2.setAttribute("stop-color", "#f25767");
+        stpo2.setAttribute("offset","100%");
+
+        linearGradient.appendChild(stop2);
+
+        linearGradientBackground.setAttribute("id","gradient-background");
+
+        var stop1 = document.createElementNS("http://www.w3.org/2000/svg","stop");
+
+        stop1.setAttribute("stop-color","rgba(0,0,0,0.2)");
+        stop1.setAttribute("offst","0%");
+
+        linearGradientBackground.appendChild(stop1);
+
+        var stop2 = document.createElementNS("http://www.w3.org/2000/svg","stop");
+
+        stop2.setAttribute("stop-color","rgba(0,0,0,0.5)");
+        stop2.setAttribute("offset","1000%");
+
+        linearGradientBackground.appendChild(stop2);
+
+        defs.appendChild(linearGradient);
+        defs.appendChild(linearGradientBackground);
+
+        this.svg.appendChild(defs);
+        this.defs = defs;
+        
+
     }
 
 

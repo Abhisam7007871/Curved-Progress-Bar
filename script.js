@@ -30,6 +30,12 @@ class Dial{
 
     createSvg(){
         let svg = document.createElemmentNs("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute("width", `${this.size}px`);
+        svg.setAttribute("height", `${this.size}px`);
+        this.svg = svg;
+    }
+
+    createDefs(){
         
     }
 
